@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,53 @@ namespace AutomobileLibrary.DataAccess
                 }
             }
         }
-       }
+        //----------------------------\
+        public List<Car> GetCarList => CarList;
+        //------------------
+        public Car GetCarByID(int carID)
+        {
+            //sd LINQ
+            Car car = CarList.SingleOrDefault(pro => pro.CarID == carID);
+            return car;
+        }
+        //---------------------
+        //add 1 car moi
+        public void AddNew(Car car)
+        {
+            Car pro = GetCarByID(car.CarID);
+            if(pro == null)
+            {
+                CarList.Add(car);
+            }
+            else
+            {
+                throw new Exception("Car is already exists. ");
+            }
+        }
+        //update 1 car 
+        public void Update(Car car)
+        {
+            Car c = GetCarByID(car.CarID);
+            if(c != null)
+            {
+                var index = CarList.IndexOf(c);
+                CarList[index] = car;
+            }
+            else
+            {
+                throw new Exception("Car doea not already exists .");
+            }
+        }
+        //------------
+        //xoa 1 ham car
+        public void Remove(int CarID) { 
+         Car p = GetCarByID(CarID);
+        if (p != null)
+            {
+                CarList.Remove(p);
+            }
+            else { throw new Exception("Car does not already exists ."); }
+        }
     }
+ }
 
