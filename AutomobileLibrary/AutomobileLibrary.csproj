@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="BussinessObject\" />
+    <Folder Include="DataAccess\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
 
 </Project>
