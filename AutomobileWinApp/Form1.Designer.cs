@@ -36,7 +36,7 @@
             txtCarID = new System.Windows.Forms.TextBox();
             txtCarName = new System.Windows.Forms.TextBox();
             txtPrice = new System.Windows.Forms.MaskedTextBox();
-            maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            txtReleaseYear = new System.Windows.Forms.MaskedTextBox();
             cboManufacturer = new System.Windows.Forms.ComboBox();
             btnSave = new System.Windows.Forms.Button();
             btnCancel = new System.Windows.Forms.Button();
@@ -110,14 +110,14 @@
             txtPrice.TabIndex = 7;
             txtPrice.Text = "0";
             // 
-            // maskedTextBox2
+            // txtReleaseYear
             // 
-            maskedTextBox2.Location = new System.Drawing.Point(140, 184);
-            maskedTextBox2.Mask = "0000";
-            maskedTextBox2.Name = "maskedTextBox2";
-            maskedTextBox2.Size = new System.Drawing.Size(255, 27);
-            maskedTextBox2.TabIndex = 8;
-            maskedTextBox2.Text = "0";
+            txtReleaseYear.Location = new System.Drawing.Point(140, 184);
+            txtReleaseYear.Mask = "0000";
+            txtReleaseYear.Name = "txtReleaseYear";
+            txtReleaseYear.Size = new System.Drawing.Size(255, 27);
+            txtReleaseYear.TabIndex = 8;
+            txtReleaseYear.Text = "0";
             // 
             // cboManufacturer
             // 
@@ -137,6 +137,7 @@
             btnSave.TabIndex = 10;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
@@ -147,6 +148,7 @@
             btnCancel.TabIndex = 11;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // frmCarDetails
             // 
@@ -156,7 +158,7 @@
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(cboManufacturer);
-            Controls.Add(maskedTextBox2);
+            Controls.Add(txtReleaseYear);
             Controls.Add(txtPrice);
             Controls.Add(txtCarName);
             Controls.Add(txtCarID);
@@ -168,6 +170,7 @@
             Name = "frmCarDetails";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "frmCarDetails";
+            Load += frmCarDetails_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -182,7 +185,7 @@
         private System.Windows.Forms.TextBox txtCarID;
         private System.Windows.Forms.TextBox txtCarName;
         private System.Windows.Forms.MaskedTextBox txtPrice;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox txtReleaseYear;
         private System.Windows.Forms.ComboBox cboManufacturer;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
