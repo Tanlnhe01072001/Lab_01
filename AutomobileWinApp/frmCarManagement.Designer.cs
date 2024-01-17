@@ -42,6 +42,7 @@
             btnLoad = new System.Windows.Forms.Button();
             btnNew = new System.Windows.Forms.Button();
             btnDelete = new System.Windows.Forms.Button();
+            btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)dgvCarList).BeginInit();
             SuspendLayout();
             // 
@@ -146,6 +147,7 @@
             btnLoad.TabIndex = 11;
             btnLoad.Text = "Load";
             btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
             // 
             // btnNew
             // 
@@ -155,6 +157,7 @@
             btnNew.TabIndex = 12;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
             // 
             // btnDelete
             // 
@@ -164,12 +167,24 @@
             btnDelete.TabIndex = 13;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnClose
+            // 
+            btnClose.Location = new System.Drawing.Point(289, 432);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new System.Drawing.Size(94, 29);
+            btnClose.TabIndex = 14;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // frmCarManagement
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(677, 466);
+            Controls.Add(btnClose);
             Controls.Add(btnDelete);
             Controls.Add(btnNew);
             Controls.Add(btnLoad);
@@ -209,5 +224,6 @@
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnClose;
     }
 }
